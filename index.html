@@ -9,11 +9,13 @@
 <body class="bg-gray-100 text-gray-800">
   <div class="max-w-md mx-auto mt-10 bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
 
-    <!-- Top Bar -->
-    <div class="bg-[#0AB6FF] text-white py-4 px-4 flex items-center justify-center relative">
-      <!-- Placeholder for Logo -->
-      <div class="absolute left-4 h-6 w-6 bg-white bg-opacity-25 rounded-full"></div>
-      <h2 class="text-lg font-semibold text-center">Caller Information</h2>
+    <!-- Top Bar with Logo -->
+    <div class="bg-[#0AB6FF] text-white py-3 px-4 flex items-center justify-center relative">
+      <!-- Logo on the left -->
+      <img src="https://www.brgeneral.org/images/assets/brg-header-logo.png" alt="BRG Logo"
+           class="absolute left-4 h-8 w-auto" />
+      <!-- Title -->
+      <h2 class="text-2xl font-semibold text-center w-full">Caller Information</h2>
     </div>
 
     <!-- Info Section -->
@@ -32,11 +34,11 @@
       </div>
       <div>
         <p class="text-sm text-gray-600">Call Summary:</p>
-        <p id="summary" class="text-lg font-medium">Loading...</p>
+        <p id="summary" class="text-lg font-medium whitespace-pre-line">Loading...</p>
       </div>
       <div>
         <p class="text-sm text-gray-600">Last Utterance:</p>
-        <p id="utterance" class="text-lg font-medium">Loading...</p>
+        <p id="utterance" class="text-lg font-medium whitespace-pre-line">Loading...</p>
       </div>
     </div>
   </div>
