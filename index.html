@@ -6,35 +6,50 @@
   <title>Screen Pop</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 p-6">
-  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-    <div class="p-6">
-      <h2 class="text-xl font-bold mb-4 text-blue-600">Caller Information</h2>
-      <div class="mb-2">
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-md mx-auto mt-10 bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+
+    <!-- Top Bar -->
+    <div class="bg-[#0AB6FF] text-white py-4 px-4 flex items-center justify-center relative">
+      <!-- Placeholder for Logo -->
+      <div class="absolute left-4 h-6 w-6 bg-white bg-opacity-25 rounded-full"></div>
+      <h2 class="text-lg font-semibold text-center">Caller Information</h2>
+    </div>
+
+    <!-- Info Section -->
+    <div class="p-6 space-y-4">
+      <div>
         <p class="text-sm text-gray-600">Name:</p>
-        <p id="name" class="text-lg font-semibold">Loading...</p>
+        <p id="name" class="text-lg font-medium">Loading...</p>
       </div>
-      <div class="mb-2">
-        <p class="text-sm text-gray-600">Reason for Call:</p>
-        <p id="reason" class="text-lg font-semibold">Loading...</p>
+      <div>
+        <p class="text-sm text-gray-600">Date of Birth:</p>
+        <p id="dob" class="text-lg font-medium">Loading...</p>
       </div>
-      <div class="mt-4">
-        <button id="refreshBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-          Refresh
-        </button>
+      <div>
+        <p class="text-sm text-gray-600">Category:</p>
+        <p id="category" class="text-lg font-medium">Loading...</p>
+      </div>
+      <div>
+        <p class="text-sm text-gray-600">Call Summary:</p>
+        <p id="summary" class="text-lg font-medium">Loading...</p>
+      </div>
+      <div>
+        <p class="text-sm text-gray-600">Last Utterance:</p>
+        <p id="utterance" class="text-lg font-medium">Loading...</p>
       </div>
     </div>
   </div>
 
   <script>
-    function populateFields() {
-      const params = new URLSearchParams(window.location.search);
-      document.getElementById('name').textContent = params.get('name') || 'Unknown';
-      document.getElementById('reason').textContent = params.get('reason') || 'Not provided';
-    }
+    const params = new URLSearchParams(window.location.search);
+    const getParam = (key) => params.get(key) || "N/A";
 
-    document.getElementById('refreshBtn').addEventListener('click', populateFields);
-    populateFields(); // initial load
+    document.getElementById("name").textContent = getParam("name");
+    document.getElementById("dob").textContent = getParam("dob");
+    document.getElementById("category").textContent = getParam("category");
+    document.getElementById("summary").textContent = getParam("summary");
+    document.getElementById("utterance").textContent = getParam("utterance");
   </script>
 </body>
 </html>
